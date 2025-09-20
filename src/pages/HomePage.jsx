@@ -10,8 +10,9 @@ const Homepage = () => {
       <HomeCards />
       <JobListings isHome = {true} />
       <ViewAllJobs />
-    </>
+    </> 
   );
 };
 
 export default Homepage;
+
