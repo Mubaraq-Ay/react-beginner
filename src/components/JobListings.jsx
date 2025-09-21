@@ -2,10 +2,17 @@ import { useState, useEffect } from "react";
 import JobListing from "./JobListing";
 
 const JobListings = ({ isHome = false }) => {
-   const [jobs, setJobs] = useState([]);
-   const [loading, setLoading] = useState(true);
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const res = await fetch('http://localhost:8000/jobs');
+      const data = await res.json();
+      setJobs(data);
+    };
+    fetchJobs();
+  }, []);
 
   return (
     <section className="bg-blue-50 px-4 py-10">
