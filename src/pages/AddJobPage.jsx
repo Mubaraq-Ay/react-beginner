@@ -14,30 +14,27 @@ const AddJobPage = ({ addJobSubmit }) => {
 
     const navigate = useNavigate();
 
-    const submitForm = (e)  => {
+    const submitForm = (e) => {
         e.preventDefault();
-
-
 
         const newJob = {
             title,
             type,
             location,
             description,
-            salary, 
+            salary,
             company: {
                 name: companyName,
                 description: companyDescription,
                 contactEmail,
                 contactPhone,
- 
+
             }
         }
         addJobSubmit(newJob);
 
         return navigate('/jobs');
     }
-
 
     return (
 
